@@ -1,0 +1,31 @@
+<!--Main Navigation-->
+<header>
+
+  <nav class="navbar  navbar-expand-lg navbar-dark green ">
+      <a class="navbar-brand" href="#"><strong>MesaHacks</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item" routerLinkActive='active current'>
+                  <a [routerLink]="['home']" class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item" routerLinkActive='active current'>
+                  <a [routerLink]="['map']"  class="nav-link" href="#">Map</a>
+              </li>
+              <li class="nav-item" routerLinkActive='active current'>
+                  <a [routerLink]="['prizes']" class="nav-link" href="#">Prizes</a>
+              </li>
+              <li class="nav-item" routerLinkActive='active current'>
+                  <a [routerLink]="['schedule']" class="nav-link" href="#">Schedule</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+</header>
+<!--Main Navigation-->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
