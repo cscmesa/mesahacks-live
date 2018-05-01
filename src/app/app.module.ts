@@ -9,8 +9,10 @@ import { LiveHomeComponent } from './components/live-home/live-home.component';
 import { MapComponent } from './components/map/map.component';
 import { PrizesComponent } from './components/prizes/prizes.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 const routes = [
+  {path: '', component: LiveHomeComponent},
   {path: 'home', component: LiveHomeComponent},
   {path: 'map', component: MapComponent},
   {path: 'prizes', component: PrizesComponent},
@@ -23,7 +25,8 @@ const routes = [
     LiveHomeComponent,
     MapComponent,
     PrizesComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
