@@ -1,0 +1,48 @@
+@import '../../../styles.scss';
+
+nav {
+  color: white;
+  font-weight: normal;
+  height: 100%;
+  width: 275px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $secondary-color;
+  overflow-x: hidden;
+  box-shadow: 1px 0 2px #D3D3D3;
+}
+
+nav > a > img {
+  padding: 20px;
+}
+
+nav #countdown {
+  background-color: darken($secondary-color, 8%);
+  height: 90px;
+}
+
+nav a{
+  color: white;
+  display: block;
+  padding: 10px 20px 10px;
+  width: 100%;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav ul {
+  padding: 0;
+}
+
+nav li:hover, li:active {
+  background-color: darken($secondary-color, 8%);
+}
+
+.router-link-active {
+  border-left: 8px solid $quinary-color;
+  background-color: darken($secondary-color, 8%);
+}

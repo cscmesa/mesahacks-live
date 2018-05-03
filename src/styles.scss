@@ -1,5 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+$primary-color: #26547C; // Navy Blue
+$secondary-color: #06d6a0; // Green
+$tertiary-color: #FFD166; // Mustard Yellow
+$quaternary-color: #EF476F; // Red
+$quinary-color: #a34eaf; // Purple
+
+.primary-bg {
+  background-color: $primary-color;
+}
+
+.secondary-bg {
+  background-color: $secondary-color;
+}
+
+.tertiary-bg {
+  background-color: $tertiary-color;
+}
+
+body {
+  background-image: url(/assets/MH_BG.svg);
+  // background-size: 90%;
+  background-size: cover;
+}
+
 h1 {
+    color: white;
+    font-weight: bold;
     text-align: center;
+    margin-top: 0.5em;
     padding: 0.5em;
 }
