@@ -11,7 +11,7 @@ nav {
   left: 0;
   background-color: $secondary-color;
   overflow-x: hidden;
-  box-shadow: 1px 0 2px #D3D3D3;
+  box-shadow: 0 0 5px lighten(#000, 30%);
 }
 
 nav > a > img {

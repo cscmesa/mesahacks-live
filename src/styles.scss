@@ -6,6 +6,17 @@ $tertiary-color: #FFD166; // Mustard Yellow
 $quaternary-color: #EF476F; // Red
 $quinary-color: #a34eaf; // Purple
 
+.primary-color {
+  color: $primary-color;
+}
+
+.secondary-color {
+  color: #06d6a0;
+}
+
+.tertiary-color {
+  color: $tertiary-color;
+}
 .primary-bg {
   background-color: $primary-color;
 }
@@ -22,6 +33,20 @@ body {
   background-image: url(/assets/MH_BG.svg);
   // background-size: 90%;
   background-size: cover;
+}
+
+.card-columns {
+  column-count: 2 !important;
+}
+
+.btn:hover {
+  color: white !important;
+  background-color: darken($secondary-color, 3%);
+}
+
+.btn {
+  border-radius: 10px !important;
+  font-size: 1rem;
 }
 
 h1 {
