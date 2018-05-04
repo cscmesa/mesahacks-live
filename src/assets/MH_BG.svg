@@ -1,0 +1,10 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <title>MH_BG</title>
+  <g>
+    <polygon points="0 0 0 117.96 117.96 0 0 0" style="fill: #26557d"/>
+    <polygon points="300 60.68 300 0 239.32 0 0 239.32 0 300 60.68 300 300 60.68" style="fill: #ef476f"/>
+    <polygon points="117.96 0 0 117.96 0 239.32 239.32 0 117.96 0" style="fill: #ffd167"/>
+    <polygon points="300 300 300 182.04 182.04 300 300 300" style="fill: #4cbd97"/>
+    <polygon points="182.04 300 300 182.04 300 60.68 60.68 300 182.04 300" style="fill: #9c52a0"/>
+  </g>
+</svg>

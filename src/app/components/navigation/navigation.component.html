@@ -1,4 +1,4 @@
-<nav class="navbar  navbar-expand-lg navbar-dark green ">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark primary-bg">
     <a class="navbar-brand" href="#">
       <strong>MesaHacks</strong>
     </a>
@@ -24,4 +24,35 @@
         </li>
       </ul>
     </div>
+  </nav> -->
+
+  <nav>
+    <a class="navbar-brand" href="#" style="height: 175px;">
+      <img src="./assets/logo.svg" class="img-fluid">
+    </a>
+    <span style="padding: 20px;">
+      <strong>COUNTDOWN</strong>
+    </span>
+    <div id="countdown" class="mt-2 mb-3">
+
+    </div>
+    <span style="padding: 20px;">
+      <strong>GENERAL</strong>
+    </span>
+      <ul>
+        <li>
+          <a [routerLink]="['home']" routerLinkActive='router-link-active' href="#">Live Site Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['map']" routerLinkActive='router-link-active' href="#">Map</a>
+        </li>
+        <li>
+          <a [routerLink]="['prizes']" routerLinkActive='router-link-active' href="#">Prizes</a>
+        </li>
+        <li>
+          <a [routerLink]="['schedule']" routerLinkActive='router-link-active' href="#">Schedule</a>
+        </li>
+      </ul>
   </nav>
