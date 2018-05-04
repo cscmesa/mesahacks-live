@@ -30,9 +30,51 @@ $quinary-color: #a34eaf; // Purple
 }
 
 body {
-  background-image: url(/assets/MH_BG.svg);
-  // background-size: 90%;
-  background-size: cover;
+  // background-image: url(/assets/MH_BG.svg);
+  // // background-size: 90%;
+  // background-size: cover;
+  // background-attachment: fixed;
+  background: linear-gradient(-45deg, $tertiary-color, $quaternary-color, $quinary-color, $primary-color);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease-in-out infinite;
+  -moz-animation: Gradient 15s ease-in-out infinite;
+  animation: Gradient 15s ease-in-out infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 .card-columns {
@@ -47,6 +89,7 @@ body {
 .btn {
   border-radius: 10px !important;
   font-size: 1rem;
+  padding: 10px 40px;
 }
 
 h1 {
@@ -55,4 +98,12 @@ h1 {
     text-align: center;
     margin-top: 0.5em;
     padding: 0.5em;
+}
+
+a {
+  color: $primary-color;
+}
+
+a:hover {
+  color: lighten($primary-color, 30%);
 }
