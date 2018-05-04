@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ const routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
     MDBBootstrapModule.forRoot()
   ],

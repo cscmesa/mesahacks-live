@@ -10,6 +10,7 @@ import * as $ from 'jquery';
 export class NavigationComponent implements AfterViewInit {
 
   ngAfterViewInit() {
+
     var countDownDate = new Date("June 1, 2018, 19:00:00").getTime();
     var x = setInterval(function() {
       var now = new Date().getTime();
