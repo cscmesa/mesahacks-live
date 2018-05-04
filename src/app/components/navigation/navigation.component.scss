@@ -11,7 +11,13 @@ nav {
   left: 0;
   background-color: $secondary-color;
   overflow-x: hidden;
-  box-shadow: 0 0 5px lighten(#000, 30%);
+}
+
+nav > p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0 20px;
+  margin: 0;
 }
 
 nav > a > img {
@@ -20,7 +26,16 @@ nav > a > img {
 
 nav #countdown {
   background-color: darken($secondary-color, 8%);
-  height: 90px;
+}
+
+nav #countdown .font-sm {
+  font-size: 0.75rem;
+}
+
+nav #countdown .font-lg {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav a{
