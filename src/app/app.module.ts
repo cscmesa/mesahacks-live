@@ -12,7 +12,7 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 const routes = [
-  {path: '', component: LiveHomeComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: LiveHomeComponent},
   {path: 'map', component: MapComponent},
   {path: 'prizes', component: PrizesComponent},
