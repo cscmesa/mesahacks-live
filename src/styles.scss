@@ -81,6 +81,12 @@ body {
   column-count: 2 !important;
 }
 
+@media (max-width: 62rem) {
+  .card-columns {
+    column-count: 1 !important;
+  }
+}
+
 .btn:hover {
   color: white !important;
   background-color: darken($secondary-color, 3%);
