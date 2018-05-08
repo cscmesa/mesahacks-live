@@ -10,13 +10,15 @@ import { MapComponent } from './components/map/map.component';
 import { PrizesComponent } from './components/prizes/prizes.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { ApisComponent } from './components/apis/apis.component';
 
 const routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: LiveHomeComponent},
   {path: 'map', component: MapComponent},
   {path: 'prizes', component: PrizesComponent},
-  {path: 'schedule', component: ScheduleComponent}
+  {path: 'schedule', component: ScheduleComponent},
+  {path: 'apis', component: ApisComponent}
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const routes = [
     MapComponent,
     PrizesComponent,
     ScheduleComponent,
-    NavigationComponent
+    NavigationComponent,
+    ApisComponent
   ],
   imports: [
     BrowserModule,

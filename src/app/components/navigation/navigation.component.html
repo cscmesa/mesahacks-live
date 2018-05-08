@@ -1,58 +1,52 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark primary-bg">
-    <a class="navbar-brand" href="#">
-      <strong>MesaHacks</strong>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" routerLinkActive='active current'>
-          <a [routerLink]="['home']" class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item" routerLinkActive='active current'>
-          <a [routerLink]="['map']" class="nav-link" href="#">Map</a>
-        </li>
-        <li class="nav-item" routerLinkActive='active current'>
-          <a [routerLink]="['prizes']" class="nav-link" href="#">Prizes</a>
-        </li>
-        <li class="nav-item" routerLinkActive='active current'>
-          <a [routerLink]="['schedule']" class="nav-link" href="#">Schedule</a>
-        </li>
-      </ul>
+<nav>
+  <a class="navbar-brand" href="#" style="height: 175px;">
+    <img src="./assets/logo.svg" class="img-fluid">
+  </a>
+  <p>COUNTDOWN</p>
+  <div id="countdown" class="mt-2 mb-3 px-3 text-center">
+    <div class="row justify-content-center">
+      <div class="col-4 p-0">
+        <p id="hours" class="font-lg"></p>
+      </div>
+      <div class="col-4 p-0">
+        <p id="minutes" class="font-lg"></p>
+      </div>
+      <div class="col-4 p-0">
+        <p id="seconds" class="font-lg"></p>
+      </div>
     </div>
-  </nav> -->
-
-  <nav>
-    <a class="navbar-brand" href="#" style="height: 175px;">
-      <img src="./assets/logo.svg" class="img-fluid">
-    </a>
-    <span style="padding: 20px;">
-      <strong>COUNTDOWN</strong>
-    </span>
-    <div id="countdown" class="mt-2 mb-3">
-
+    <div class="row justify-content-center">
+      <div class="col">
+        <p class="font-sm">Hours</p>
+      </div>
+      <div class="col">
+        <p class="font-sm">Minutes</p>
+      </div>
+      <div class="col">
+        <p class="font-sm">Seconds</p>
+      </div>
     </div>
-    <span style="padding: 20px;">
-      <strong>GENERAL</strong>
-    </span>
-      <ul>
-        <li>
-          <a [routerLink]="['home']" routerLinkActive='router-link-active' href="#">Live Site Home
-            <!-- <span class="sr-only">(current)</span> -->
-          </a>
-        </li>
-        <li>
-          <a [routerLink]="['map']" routerLinkActive='router-link-active' href="#">Map</a>
-        </li>
-        <li>
-          <a [routerLink]="['prizes']" routerLinkActive='router-link-active' href="#">Prizes</a>
-        </li>
-        <li>
-          <a [routerLink]="['schedule']" routerLinkActive='router-link-active' href="#">Schedule</a>
-        </li>
-      </ul>
-  </nav>
+  </div>
+  <span style="padding: 20px;">
+    <strong>GENERAL</strong>
+  </span>
+    <ul>
+      <li>
+        <a [routerLink]="['home']" routerLinkActive='router-link-active' href="#">Live Site Home
+          <!-- <span class="sr-only">(current)</span> -->
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['map']" routerLinkActive='router-link-active' href="#">Map</a>
+      </li>
+      <li>
+        <a [routerLink]="['apis']" routerLinkActive='router-link-active' href="#">Suggested APIs</a>
+      </li>
+      <li>
+        <a [routerLink]="['prizes']" routerLinkActive='router-link-active' href="#">Prizes</a>
+      </li>
+      <li>
+        <a [routerLink]="['schedule']" routerLinkActive='router-link-active' href="#">Schedule</a>
+      </li>
+    </ul>
+</nav>
