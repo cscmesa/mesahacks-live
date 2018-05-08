@@ -13,7 +13,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ApisComponent } from './components/apis/apis.component';
 
 const routes = [
-  {path: '', component: LiveHomeComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: LiveHomeComponent},
   {path: 'map', component: MapComponent},
   {path: 'prizes', component: PrizesComponent},
