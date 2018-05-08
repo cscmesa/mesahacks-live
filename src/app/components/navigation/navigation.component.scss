@@ -1,41 +1,43 @@
 @import '../../../styles.scss';
 
-nav {
-  color: white;
-  font-weight: normal;
-  height: 100%;
-  width: 275px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: $secondary-color;
-  overflow-x: hidden;
-}
+@media (min-width: 48rem) {
+  nav {
+    color: white;
+    font-weight: normal;
+    height: 100%;
+    width: 275px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $secondary-color;
+    overflow-x: hidden;
+  }
 
-nav > p {
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 0 20px;
-  margin: 0;
-}
+  nav > p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0 20px;
+    margin: 0;
+  }
 
-nav > a > img {
-  padding: 20px;
-}
+  nav > a > img {
+    padding: 20px;
+  }
 
-nav #countdown {
-  background-color: darken($secondary-color, 8%);
-}
+  nav #countdown {
+    background-color: darken($secondary-color, 8%);
+  }
 
-nav #countdown .font-sm {
-  font-size: 0.75rem;
-}
+  nav #countdown .font-sm {
+    font-size: 0.75rem;
+  }
 
-nav #countdown .font-lg {
-  font-size: 3rem;
-  margin: 0;
-  padding: 0;
+  nav #countdown .font-lg {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 nav a{
