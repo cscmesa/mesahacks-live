@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 @Component({
   selector: 'app-live-home',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./live-home.component.scss']
 })
 export class LiveHomeComponent implements OnInit {
-
+  
   ngOnInit() {
   }
 
