@@ -13,17 +13,96 @@ import * as $ from 'jquery';
 export class NavigationComponent implements OnInit{
 
   constructor (private httpService: HttpClient) { }
-  public textArr: string [];
+
   public hours: number;
   public minutes: number;
   public seconds: number;
+  public distance: number;
+  public now: any;
+  public time: any;
   public past: any;
   public upcoming: any;
-  public now: any;
-  public distance: number;
+  public schedule: any;
+
   private countDownDate = new Date("June 1, 2018, 19:00:00").getTime();
 
   ngOnInit() {
+
+  const scheduleJSON = [
+      {
+        "Title" : "Opening Ceremony",
+        "Room" : "Mesa Commons",
+        "msTime" : 1527872400000,
+        "Time" : ""
+      },
+      {
+        "Title" : "Intro to Sustainability Workshop",
+        "Room" : "MC211 A/B",
+        "msTime" : 1527877800000,
+        "Time" : ""
+      },
+      {
+        "Title" : "Track Workshop #1",
+        "Room" : "MC211 A/B",
+        "msTime" : 1527881400000,
+        "Time" : ""
+      },
+      {
+        "Title" : "Workshop #2",
+        "Room" : "MC211 A/B",
+        "msTime" : 1527881400000,
+        "Time" : ""
+      },
+      {
+        "Title" : "Workshop #3",
+        "Room" : "MC211 A/B",
+        "msTime" : 1527883200000,
+        "Time" : ""
+      },
+      {
+        "Title" : "Track Workshop #2",
+        "Room" : "MC211 A/B",
+        "msTime" : 1527885000000,
+        "Time" : ""
+      },
+      {
+        "Title" : "Track Workshop #3",
+        "Room" : "MC211 A/B",
+        "msTime" : 1527888600000,
+        "Time" : ""
+      },
+      {
+        "Title" : "Track Workshop #4",
+        "Room" : "MC211 A/B",
+        "msTime" : 1527892200000,
+        "Time" : ""
+      },
+      {
+        "Title" : "Dinner",
+        "Room" : "Sunrise Plaza",
+        "msTime" : 1527904800000,
+        "Time" : ""
+      },
+      {
+        "Title" : "Closing Ceremony",
+        "Room" : "Mesa Commons",
+        "msTime" : 1527910200000,
+        "Time" : ""
+      }
+    ];
+
+    this.schedule = JSON.parse(JSON.stringify(scheduleJSON));
+
+    Observable.interval(5000).subscribe((x) => {
+      for (let item of this.schedule) {
+        item.Time = new Date(item.msTime).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+      }
+      this.past = new Date();
+      this.upcoming = new Date(this.past.getTime() + 5400000).getTime();
+      this.past = this.past.getTime();
+      console.log(this.past, this.upcoming);
+    });
+
     Observable.interval(1000).map((x) => {
       this.now = new Date().getTime();
       this.distance = this.countDownDate - this.now;
@@ -36,21 +115,6 @@ export class NavigationComponent implements OnInit{
       this.minutes = Math.floor((this.distance % (1000 * 60 * 60)) / (1000 * 60));
       this.seconds = Math.floor((this.distance % (1000 * 60)) / 1000);
     });
-
-    this.httpService.get('./assets/schedule.json').subscribe(
-      data => {
-        this.textArr = data as string [];
-        for (let item of this.textArr) {
-          this.past = new Date("2018-06-01T10:31:00");
-          this.upcoming = new Date(this.past.getTime() + 5400000);
-          item.ISOTime = new Date(item.Time);
-          item.Time = new Date(item.Time).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-        }
-      },
-      (err: HttpErrorResponse) => {
-        console.log (err.message);
-      }
-    );
   }
 
 }
