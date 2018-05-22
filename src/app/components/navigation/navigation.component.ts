@@ -17,14 +17,17 @@ export class NavigationComponent implements OnInit{
   public hours: number;
   public minutes: number;
   public seconds: number;
-  public distance: number;
+
   public now: any;
   public time: any;
   public past: any;
   public upcoming: any;
-  public schedule: any;
 
-  private countDownDate = new Date("June 1, 2018, 19:00:00").getTime();
+  public schedule: any;
+  public distance = 28800000; // 8 hours
+
+  private start = false;
+  private startTime = new Date("May 21, 2018, 18:45:00").getTime();
 
   ngOnInit() {
 
@@ -99,14 +102,15 @@ export class NavigationComponent implements OnInit{
       }
       this.past = new Date();
       this.upcoming = new Date(this.past.getTime() + 5400000).getTime();
-      this.past = this.past.getTime();
-      console.log(this.past, this.upcoming);
+      this.past = this.past.getTime(); // Converted to ms for view logic
     });
 
     Observable.interval(1000).map((x) => {
       this.now = new Date().getTime();
-      this.distance = this.countDownDate - this.now;
-      if (this.distance <= 0) {
+      if (this.startTime < this.now) {
+        this.start = true;
+      }
+      if (this.distance < 0) {
         clearInterval(x);
         $('#countdown').html("<h1> Time's Up! </h1>");
       }
@@ -114,6 +118,9 @@ export class NavigationComponent implements OnInit{
       this.hours = Math.floor((this.distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       this.minutes = Math.floor((this.distance % (1000 * 60 * 60)) / (1000 * 60));
       this.seconds = Math.floor((this.distance % (1000 * 60)) / 1000);
+      if (this.start == true) {
+        this.distance -= 1000;
+      }
     });
   }
 
