@@ -26,7 +26,9 @@ export class NavigationComponent implements OnInit{
   public schedule: any;
   public distance = 28800000; // 8 hours
 
-  private start = false;
+  public navCollapsed = true;
+
+  private start = true;
   private startTime = new Date("May 21, 2018, 18:45:00").getTime();
 
   ngOnInit() {
@@ -122,6 +124,12 @@ export class NavigationComponent implements OnInit{
         this.distance -= 1000;
       }
     });
+  }
+
+  toggleNav() {
+    console.log(this.navCollapsed);
+    this.navCollapsed = !this.navCollapsed;
+    console.log(this.navCollapsed);    
   }
 
 }

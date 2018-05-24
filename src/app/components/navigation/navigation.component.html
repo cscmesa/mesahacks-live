@@ -1,4 +1,14 @@
-<nav>
+<div class="display-btn" (click)='toggleNav()' >
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<nav [ngClass]=" navCollapsed ? 'visible': 'hide' "  >
+  <div (click)='toggleNav()' class="display-btn" >
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <a class="navbar-brand" href="#" style="height: 175px;">
     <img src="./assets/logo.svg" class="img-fluid">
   </a>
