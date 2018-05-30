@@ -1,18 +1,56 @@
 @import '../../../styles.scss';
 
-@media (min-width: 48rem) {
   nav {
     color: white;
     font-weight: normal;
     height: 100%;
     width: 275px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     background-color: $secondary-color;
     overflow-x: hidden;
+    transition: left 0.3s linear;
   }
+
+  
+  @media (max-width: 760px) {
+
+    .hide{
+      left: -275px;
+    }
+    
+    .visible{
+      left: 0;
+    }
+
+    .display-btn {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 15px;
+      cursor: pointer;
+      margin: 20px;
+      position: fixed;
+      top: 10px;
+      z-index: 1;
+    }
+
+  
+    .display-btn span{
+      height: 5px;
+      background-color: #444;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    nav .display-btn{
+      margin-left: 200px;
+      position: relative;
+    }
+  }
+
 
   nav > p {
     font-size: 0.9rem;
@@ -46,7 +84,7 @@
   .pl-20 {
     padding-left: 20px
   }
-}
+
 
 .schedule-item {
   padding: 0 20px;
