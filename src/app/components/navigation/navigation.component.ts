@@ -27,7 +27,7 @@ export class NavigationComponent implements OnInit{
   public distance = 28800000; // 8 hours
 
   private start = false;
-  private startTime = new Date("May 21, 2018, 18:45:00").getTime();
+  private startTime = new Date("June 1, 2018, 10:00:00").getTime();
 
   ngOnInit() {
 
@@ -39,51 +39,15 @@ export class NavigationComponent implements OnInit{
         "Time" : ""
       },
       {
-        "Title" : "Intro to Sustainability Workshop",
-        "Room" : "MC211 A/B",
-        "msTime" : 1527877800000,
-        "Time" : ""
-      },
-      {
-        "Title" : "Track Workshop #1",
-        "Room" : "MC211 A/B",
-        "msTime" : 1527881400000,
-        "Time" : ""
-      },
-      {
-        "Title" : "Workshop #2",
-        "Room" : "MC211 A/B",
-        "msTime" : 1527881400000,
-        "Time" : ""
-      },
-      {
-        "Title" : "Workshop #3",
-        "Room" : "MC211 A/B",
-        "msTime" : 1527883200000,
-        "Time" : ""
-      },
-      {
-        "Title" : "Track Workshop #2",
+        "Title" : "Intro to Twilio API Workshop",
         "Room" : "MC211 A/B",
         "msTime" : 1527885000000,
         "Time" : ""
       },
       {
-        "Title" : "Track Workshop #3",
+        "Title" : "Getting Started with Arduino Workshop",
         "Room" : "MC211 A/B",
         "msTime" : 1527888600000,
-        "Time" : ""
-      },
-      {
-        "Title" : "Track Workshop #4",
-        "Room" : "MC211 A/B",
-        "msTime" : 1527892200000,
-        "Time" : ""
-      },
-      {
-        "Title" : "Dinner",
-        "Room" : "Sunrise Plaza",
-        "msTime" : 1527904800000,
         "Time" : ""
       },
       {
@@ -96,13 +60,14 @@ export class NavigationComponent implements OnInit{
 
     this.schedule = JSON.parse(JSON.stringify(scheduleJSON));
 
-    Observable.interval(5000).subscribe((x) => {
+    Observable.interval(1000).subscribe((x) => {
       for (let item of this.schedule) {
         item.Time = new Date(item.msTime).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
       }
-      this.past = new Date();
+      this.past = new Date("June 1, 2018, 10:00:00");
       this.upcoming = new Date(this.past.getTime() + 5400000).getTime();
       this.past = this.past.getTime(); // Converted to ms for view logic
+      console.log(this.past, this.upcoming);
     });
 
     Observable.interval(1000).map((x) => {
