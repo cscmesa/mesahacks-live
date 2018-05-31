@@ -15,7 +15,7 @@ export class LiveHomeComponent implements OnInit {
   announcements = [
   'Use code MesaHacks2018 on Twilio for $25 of starting credit!',
   'Make sure you join our Slack workspace for the latest updates!',
-  'Have you started your TwilioQuest? Check out the Prizes section for the link!',
+  'Have you started your TwilioQuest? Look below for the link!',
   "Stuck on your code? Don't know what to do next? Ask a mentor in our #help channel on Slack!",
   "Don't forget! Hacking ends at 7:30PM!"
   ];
