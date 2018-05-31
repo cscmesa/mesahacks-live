@@ -115,3 +115,11 @@ a {
 a:hover {
   color: lighten($primary-color, 30%);
 }
+
+.pass {
+  color: $primary-color;
+}
+
+.pass:hover {
+  color:lighten($primary-color, 30%);
+}
