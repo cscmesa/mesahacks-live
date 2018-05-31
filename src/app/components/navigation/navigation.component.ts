@@ -12,7 +12,7 @@ import * as $ from 'jquery';
 
 export class NavigationComponent implements OnInit{
 
-  constructor (private httpService: HttpClient) { }
+  constructor () { }
 
   public hours: number;
   public minutes: number;
@@ -24,12 +24,13 @@ export class NavigationComponent implements OnInit{
   public upcoming: any;
 
   public schedule: any;
-  public distance = 28800000; // 8 hours
+  public distance: number; // 9 hours
 
   public navCollapsed = false;
 
-  private start = true;
-  private startTime = new Date("May 21, 2018, 18:45:00").getTime();
+  private start = false;
+  private startTime = new Date("June 1, 2018, 10:30:00").getTime();
+  private endTime = new Date("June 1, 2018, 19:30:00").getTime();
 
   ngOnInit() {
 
@@ -62,37 +63,39 @@ export class NavigationComponent implements OnInit{
 
     this.schedule = JSON.parse(JSON.stringify(scheduleJSON));
 
-    Observable.interval(1000).subscribe((x) => {
+    Observable.interval(1000).startWith(0).subscribe((x) => {
       for (let item of this.schedule) {
         item.Time = new Date(item.msTime).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
       }
       this.past = new Date("June 1, 2018, 10:00:00");
       this.upcoming = new Date(this.past.getTime() + 5400000).getTime();
       this.past = this.past.getTime(); // Converted to ms for view logic
-      console.log(this.past, this.upcoming);
     });
 
-    Observable.interval(1000).map((x) => {
+    Observable.interval(1000).startWith(0).subscribe((x) => {
       this.now = new Date().getTime();
+      console.log(this.now, this.startTime, this.start)
       if (this.startTime < this.now) {
         this.start = true;
+      }
+      if (this.start == true) {
+        this.distance = this.endTime - this.now;
+      } else {
+        this.distance = this.endTime - this.startTime;
       }
       if (this.distance < 0) {
         clearInterval(x);
         $('#countdown').html("<h1> Time's Up! </h1>");
       }
-    }).subscribe((x) => {
       this.hours = Math.floor((this.distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       this.minutes = Math.floor((this.distance % (1000 * 60 * 60)) / (1000 * 60));
       this.seconds = Math.floor((this.distance % (1000 * 60)) / 1000);
-      if (this.start == true) {
-        this.distance -= 1000;
-      }
+
     });
   }
 
   toggleNav() {
-    this.navCollapsed = !this.navCollapsed;  
+    this.navCollapsed = !this.navCollapsed;
   }
 
 }

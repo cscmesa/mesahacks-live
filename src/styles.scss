@@ -35,6 +35,8 @@ body {
   // background-size: cover;
   // background-attachment: fixed;
   background: linear-gradient(-45deg, $tertiary-color, $quaternary-color, $quinary-color, $primary-color);
+  background: -webkit-linear-gradient(-45deg, $tertiary-color, $quaternary-color, $quinary-color, $primary-color);
+  background: -moz-linear-gradient(-45deg, $tertiary-color, $quaternary-color, $quinary-color, $primary-color);
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease-in-out infinite;
   -moz-animation: Gradient 15s ease-in-out infinite;
@@ -112,4 +114,12 @@ a {
 
 a:hover {
   color: lighten($primary-color, 30%);
+}
+
+.pass {
+  color: $primary-color;
+}
+
+.pass:hover {
+  color:lighten($primary-color, 30%);
 }

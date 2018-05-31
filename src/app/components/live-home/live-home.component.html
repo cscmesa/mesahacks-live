@@ -4,9 +4,9 @@
   <div class="row justify-content-center px-4">
     <div class="col">
       <div class="card text-center">
-        <h3 class="card-header"><b>Annoucements</b></h3>
-        <div class="card-body text-left">
-
+        <h3 class="card-header"><b>Announcements</b></h3>
+        <div class="card-body text-center">
+          <p class="text-muted" style="font-size: 1.1rem; margin: 0;">{{ msg }}</p>
         </div>
       </div>
     </div>
@@ -15,8 +15,9 @@
       <!--NETWORK NAME CARD -->
       <div class="card mt-4 text-center">
         <div class="card-body">
-          <h3 class="card-title">Network Name</h3>
-          <p class="text-muted">[Insert network name here]</p>
+          <h3 class="card-title">Network Information</h3>
+          <p class="text-muted">Name: sdmesa</p>
+          <p class="text-muted">Password: <span class="pass" id="pass"><a (click)="passShow()">Click to show</a></span></p>
         </div>
       </div>
 
@@ -62,9 +63,9 @@
       <div class="card mt-4 text-center">
         <div class="card-body">
           <h3 class="card-title">Slack</h3>
-          <p class="text-muted">Get on our <a href="https://mesahacks2018.slack.com" target="blank" class="primary">MesaHacks Slack channel</a> to get the latest information for annoucements and workshops.
+          <p class="text-muted">Get on our <a href="https://join.slack.com/t/cscmesa/shared_invite/enQtMzYwMzcyNTAyMjYzLWFjYTQ1OGE1OGI5NjUwYzg0MWMxN2JiNmY1MDU5YTlmYWJmNGVmMmZmMTdlNzkyNjE3MDYxYmRhZWMyOGM5ZDg" target="blank" class="primary">MesaHacks Slack channel</a> to get the latest information for annoucements and workshops.
           Use the link below to join.</p>
-          <a href="#" class="btn secondary-bg" target="blank">Join MesaHacks 2018</a>
+          <a href="https://join.slack.com/t/cscmesa/shared_invite/enQtMzYwMzcyNTAyMjYzLWFjYTQ1OGE1OGI5NjUwYzg0MWMxN2JiNmY1MDU5YTlmYWJmNGVmMmZmMTdlNzkyNjE3MDYxYmRhZWMyOGM5ZDg" class="btn secondary-bg" target="blank">Join MesaHacks 2018</a>
         </div>
       </div>
 
@@ -72,7 +73,15 @@
       <div class="card mt-3 text-center">
           <div class="card-body">
             <h3 class="card-title">Devpost</h3>
-            <p class="text-muted">We are using <a href="https://mesahacks.devpost.com/">Devpost</a> for hacking submissions. Make sure you submit your hack by 7:00 PM!</p>
+            <p class="text-muted">We are using <a href="https://mesahacks.devpost.com/">Devpost</a> for hacking submissions. Make sure you submit your hack by 7:30 PM!</p>
           </div>
+      </div>
+
+      <div class="card mt-3 text-center">
+        <div class="card-body">
+          <h3>TwilioQuest</h3>
+          <a href="https://www.twilio.com/quest/welcome" class="btn secondary-bg" target="blank">Start your quest</a>
+          <a href="https://www.twilio.com/quest/leaderboard/mesahacks-2018" class="btn secondary-bg" target="blank">Leaderboard</a>
+        </div>
       </div>
   </div>
