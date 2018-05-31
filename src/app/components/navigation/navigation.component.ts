@@ -62,17 +62,16 @@ export class NavigationComponent implements OnInit{
 
     this.schedule = JSON.parse(JSON.stringify(scheduleJSON));
 
-    Observable.interval(1000).subscribe((x) => {
+    Observable.interval(1000).startWith(0).subscribe((x) => {
       for (let item of this.schedule) {
         item.Time = new Date(item.msTime).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
       }
       this.past = new Date("June 1, 2018, 10:00:00");
       this.upcoming = new Date(this.past.getTime() + 5400000).getTime();
       this.past = this.past.getTime(); // Converted to ms for view logic
-      console.log(this.past, this.upcoming);
     });
 
-    Observable.interval(1000).map((x) => {
+    Observable.interval(1000).startWith(0).map((x) => {
       this.now = new Date().getTime();
       if (this.startTime < this.now) {
         this.start = true;
@@ -92,7 +91,7 @@ export class NavigationComponent implements OnInit{
   }
 
   toggleNav() {
-    this.navCollapsed = !this.navCollapsed;  
+    this.navCollapsed = !this.navCollapsed;
   }
 
 }

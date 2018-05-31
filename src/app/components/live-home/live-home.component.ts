@@ -1,32 +1,38 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationComponent } from '../navigation/navigation.component';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Rx';
-
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-live-home',
   templateUrl: './live-home.component.html',
   styleUrls: ['./live-home.component.scss']
 })
-export class LiveHomeComponent implements AfterViewInit {
+export class LiveHomeComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
-  ngAfterViewInit() {
+  announcements = [
+  'Use code MesaHacks2018 on Twilio for $25 of starting credit!',
+  'Make sure you join our Slack workspace for the latest updates!',
+  'Have you started your TwilioQuest? Check out the Prizes section for the link!',
+  "Stuck on your code? Don't know what to do next? Ask a mentor in our #help channel on Slack!",
+  "Don't forget! Hacking ends at 7:30PM!",
+  ''
+  ];
+  msg: string;
+  index: number;
 
-    const options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    }
 
-    this.http.get('http://c3c5acba.ngrok.io', options)
-    .subscribe(data => {
-      console.log(data);
-    }, error => {
-      // console.log(error);
-    })
+  ngOnInit() {
+    this.index = Math.floor(Math.random() * this.announcements.length);
+    Observable.interval(30000).startWith(0).subscribe(x => {
+      if (this.index >= this.announcements.length) {
+        this.index = 0;
+      }
+      this.msg = this.announcements[this.index];
+      this.index += 1;
+    });
+
   }
 
 }
